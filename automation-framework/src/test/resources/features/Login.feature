@@ -1,17 +1,20 @@
 @login
 
-Feature: WebDriver University - Login Page
+Feature: WebDriver University - Login
+
+  Background:
+    Given I access the WebDriver University login page
 
   Scenario: Validate successful login
-    Given I access the WebDriver University login page
-    When I enter a specific username "webdriver"
-    And I enter a specific password "webdriver123"
-    And I click on the login button
-    Then I should be presented with a successful login message
 
   Scenario: Validate unsuccessful login
-    Given I access the WebDriver University login page
-    When I enter a specific username "webdriver"
-    And I enter a specific password "webdriver12"
+
+  Scenario Outline: Validate - Successful & Unsuccessful Login
+    When I enter a specific username <username>
+    And I enter a specific password <password>
     And I click on the login button
-    Then I should be presented with a unsuccessful login message
+    Then I should be presented with a <loginStatus> login message
+    Examples:
+      | username  | password        | loginStatus  |
+      | webdriver | webdriver123    | successful   |
+      | pedrito   | cualquiercosaxd | unsuccessful |

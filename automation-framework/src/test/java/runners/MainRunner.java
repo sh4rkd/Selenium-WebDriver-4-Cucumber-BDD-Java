@@ -6,12 +6,12 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = {"classpath:features"},
         glue = {"stepDefinitions"},
-        tags = "@login",
+        //tags = "@login",
         monochrome = true,
         dryRun = false,
         plugin = {
                 "pretty",
-                "html:target/cucumber"
+                "html:target/cucumber.html"
         }
 )
 public class MainRunner extends AbstractTestNGCucumberTests {

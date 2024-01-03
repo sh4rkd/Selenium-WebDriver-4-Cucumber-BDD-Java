@@ -41,11 +41,11 @@ public class Login_Steps {
     public void i_access_the_web_driver_university_login_page() {
         driver.get("https://webdriveruniversity.com/Login-Portal/index.html");
     }
-    @When("I enter a specific username {string}")
+    @When("I enter a specific username {word}")
     public void i_enter_a_specific_username(String username) {
         driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys(username);
     }
-    @And("I enter a specific password {string}")
+    @And("I enter a specific password {word}")
     public void i_enter_a_specific_password(String password) {
         driver.findElement(By.id("password")).sendKeys(password);
     }

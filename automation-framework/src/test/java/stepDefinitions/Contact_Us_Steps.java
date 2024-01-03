@@ -18,16 +18,19 @@ import org.testng.Assert;
 public class Contact_Us_Steps {
     private WebDriver driver;
 
-    @Before
+    @Before("@contact-us")
     public void setup(){
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/java/drivers/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--allow-running-insecure-content");
+        chromeOptions.addArguments("--disable-web-security");
+        chromeOptions.addArguments("--ignore-certificate-errors");
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
     }
 
-    @After
+    @After("@contact-us")
     public void tearDown(){
         driver.quit();
     }

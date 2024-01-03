@@ -5,10 +5,7 @@ Feature: WebDriver University - Login
   Background:
     Given I access the WebDriver University login page
 
-  Scenario: Validate successful login
-
-  Scenario: Validate unsuccessful login
-
+  @test
   Scenario Outline: Validate - Successful & Unsuccessful Login
     When I enter a specific username <username>
     And I enter a specific password <password>

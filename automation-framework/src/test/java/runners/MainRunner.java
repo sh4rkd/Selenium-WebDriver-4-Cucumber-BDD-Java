@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = {"classpath:features"},
         glue = {"stepDefinitions"},
-        //tags = "@login",
+        tags = "@regression",
         monochrome = true,
         dryRun = false,
         plugin = {
